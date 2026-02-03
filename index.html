@@ -3,24 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+        content="EgoAVFlow: Robot Policy Learning with Active Vision from Human Egocentric Videos via 3D Flow">
+  <meta name="keywords" content="EgoAVFlow, Robot Policy, Active Vision, Egocentric Videos, 3D Flow">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
+  <title>EgoAVFlow: Robot Policy Learning with Active Vision from Human Egocentric Videos via 3D Flow</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -50,6 +36,7 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
+  <!--
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
       <a class="navbar-item" href="https://keunhong.com">
@@ -80,6 +67,7 @@
     </div>
 
   </div>
+  -->
 </nav>
 
 
@@ -88,37 +76,16 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+          <h1 class="title is-1 publication-title">EgoAVFlow: Robot Policy Learning with Active Vision from Human Egocentric Videos via 3D Flow</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+              Anonymous Author
             </span>
           </div>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
-          </div>
-
+          <!--
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
               <span class="link-block">
                 <a href="https://arxiv.org/pdf/2011.12948"
                    class="external-link button is-normal is-rounded is-dark">
@@ -137,7 +104,6 @@
                   <span>arXiv</span>
                 </a>
               </span>
-              <!-- Video Link. -->
               <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
                    class="external-link button is-normal is-rounded is-dark">
@@ -147,7 +113,6 @@
                   <span>Video</span>
                 </a>
               </span>
-              <!-- Code Link. -->
               <span class="link-block">
                 <a href="https://github.com/google/nerfies"
                    class="external-link button is-normal is-rounded is-dark">
@@ -157,7 +122,6 @@
                   <span>Code</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
               <span class="link-block">
                 <a href="https://github.com/google/nerfies/releases/tag/0.1"
                    class="external-link button is-normal is-rounded is-dark">
@@ -169,12 +133,14 @@
             </div>
 
           </div>
+          -->
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!--
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
@@ -190,8 +156,10 @@
     </div>
   </div>
 </section>
+-->
 
 
+<!--
 <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
@@ -248,6 +216,7 @@
     </div>
   </div>
 </section>
+-->
 
 
 <section class="section">
@@ -294,8 +263,10 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <video id="paper-video" autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/videos-v3-wo-appendix.mp4"
+                    type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
@@ -345,12 +316,11 @@
     </div>
     <!--/ Matting. -->
 
-    <!-- Animation. -->
+    <!--
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Animation</h2>
 
-        <!-- Interpolating. -->
         <h3 class="title is-4">Interpolating states</h3>
         <div class="content has-text-justified">
           <p>
@@ -382,9 +352,7 @@
           </div>
         </div>
         <br/>
-        <!--/ Interpolating. -->
 
-        <!-- Re-rendering. -->
         <h3 class="title is-4">Re-rendering the input video</h3>
         <div class="content has-text-justified">
           <p>
@@ -403,14 +371,11 @@
                     type="video/mp4">
           </video>
         </div>
-        <!--/ Re-rendering. -->
 
       </div>
     </div>
-    <!--/ Animation. -->
 
 
-    <!-- Concurrent Work. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
@@ -435,12 +400,27 @@
         </div>
       </div>
     </div>
-    <!--/ Concurrent Work. -->
+    -->
 
   </div>
 </section>
 
 
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            This website template is borrowed from <a href="https://nerfies.github.io">Nerfies project webpage</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!--
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
@@ -485,6 +465,7 @@
     </div>
   </div>
 </footer>
+-->
 
 </body>
 </html>
