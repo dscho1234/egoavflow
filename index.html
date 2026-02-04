@@ -505,6 +505,82 @@
 </section>
 
 
+<!-- Q3: Is the proposed 3D flow-based policy robust under actively varying viewpoints? -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Q3: Is the proposed 3D flow-based policy robust under actively varying viewpoints?</h2>
+
+        <div class="columns">
+          <!-- Left: 2x2 videos -->
+          <div class="column is-half">
+            <div class="columns">
+              <div class="column is-half">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/spray_good_robot_trim.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-half">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/amplify_failure_trim.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column is-half">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/egozero_failure_trim.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-half">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/phantom_failure_trim.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+          <!-- Right: success rate figure -->
+          <div class="column is-half">
+            <div class="content">
+              <img src="./static/images/success_rate_robot_policy_baseline.png" alt="Success rate robot policy baseline" style="width: 100%;"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="content has-text-justified" style="margin-top: 1.5rem;">
+          <p>
+            All baselines are trained on the same dataset as our method, and no real robot data is used. As AMPLIFY and Phantom require an image input, we use diffusion-based inpainting to remove the human in the image and overlays a robot onto the resulting frames, enabling policy training on synthesized robot observations. To isolate the effect of the policy representation, we use the same viewpoint adjustment module for all methods: our view policy $\pi_v$ with visibility-maximizing denoising. As shown in the experimental results, EgoAVFlow shows superior capability compared to baselines. As the viewpoint keeps changing during the evaluation by our proposed view policy, the results demonstrate that the proposed 3D flow-based policy is view-invariant and benefits from its inherent 3D representation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Failure Analysis -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Failure Analysis</h2>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <div class="content">
+              <img src="./static/images/failure_analysis_pi_chart_only.png" alt="Failure analysis" style="width: 100%;"/>
+              <p class="has-text-justified" style="margin-top: 1rem;">
+                <strong>Failure analysis:</strong> Since AMPLIFY and Phantom are not inherently 3D-aware, they suffer from distribution shifts when evaluated under the unseen viewpoints. EgoZero uses 3D points, but it cannot address the non-static scene, such as when the object moves due to the gripper's contact. As a result, these robot policy baselines account for most manipulation-related failures, such as grasping/object pose failure. In the case of out-of-viewpoint, Naive AV accounts for most failures because it does not use our proposed view policy for visibility maintenance. EgoAVFlow accounts for the second-largest share of the failures. However, this does not indicate worse performance; rather, many robot policy baseline rollouts are already counted as early grasping failures and thus do not reach the later stages. If they progressed further, their proportions would be more comparable to our method.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <section class="section">
   <div class="container is-max-desktop">
 
