@@ -25,6 +25,16 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']],
+        packages: {'[+]': ['color']}
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 </head>
 <body>
 
@@ -271,7 +281,7 @@
                    alt="Thumbnail image"
                    style="width: 100%;"/>
               <p class="has-text-justified">
-                <strong>Thumbnail:</strong> Given egocentric human videos with varying visibility, EgoAVFlow converts the demonstrations into a 3D flow representation. Building on this representation, it jointly learns a robot manipulation policy and a view policy that adjusts the camera viewpoint independently of the human demo to maximize the visibility of the object of interest.
+                Given egocentric human videos with varying visibility, EgoAVFlow converts the demonstrations into a 3D flow representation. Building on this representation, it jointly learns a robot manipulation policy and a view policy that adjusts the camera viewpoint independently of the human demo to maximize the visibility of the object of interest.
               </p>
             </div>
           </div>
@@ -366,7 +376,7 @@
 
         <div class="content has-text-justified" style="margin-top: 1.5rem;">
           <p>
-            <strong>Dataset description:</strong> [Add your explanation of the good vs. bad visibility dataset here. For example: the left column shows human egocentric videos where the object of interest remains well visible throughout the manipulation; the right column shows sequences with occlusions or poor viewpoints that lead to visibility failure.]
+            <strong>Task description:</strong> [There are 4 different tasks: spray, doll, towel, toilet paper. Each task requires appropriate viewpoint adjustments. Otherwise, the object is occluded by the robot or elements in the environment, such as a table or drawer.]
           </p>
         </div>
       </div>
@@ -388,7 +398,7 @@
                    alt="Visibility comparison"
                    style="width: 100%;"/>
               <p class="has-text-justified">
-                <strong>Visibility Comparison:</strong> The visibility is computed from each different fixed viewpoint. No single viewpoint can maintain full visibility throughout the execution, indicating that the viewpoint must be continuously adjusted online to maximize visibility.
+                The visibility is computed from each different fixed viewpoint. No single viewpoint can maintain full visibility throughout the execution, indicating that the viewpoint must be continuously adjusted online to maximize visibility.
               </p>
             </div>
           </div>
@@ -465,12 +475,18 @@
           </div>
         </div>
 
+        <div class="content has-text-justified" style="margin-top: 1.5rem;">
+          <p>
+            Due to the visibility-maximizing viewpoint adjustments, EgoAVFlow maintains visibility of the query points and their predicted future flows, whereas Naive AV fails to keep them in view, causing the query points to move out of the FoV.
+          </p>
+        </div>
+
         <div class="columns is-centered" style="margin-top: 1.5rem;">
           <div class="column is-half">
             <div class="content">
               <img src="./static/images/success_rate_av.png" alt="Success rate AV" style="width: 100%;"/>
               <p class="has-text-justified">
-                <strong>Success rate (AV):</strong> [Add your explanation of success_rate_av.png here.]
+                <strong>Success rate (AV):</strong> Success rates of EgoAVFlow and Naive AV. 
               </p>
             </div>
           </div>
@@ -478,16 +494,10 @@
             <div class="content">
               <img src="./static/images/visibility_reward.png" alt="Visibility reward" style="width: 100%;"/>
               <p class="has-text-justified">
-                <strong>Visibility reward:</strong> [Add your explanation of visibility_reward.png here.]
+                <strong>Visibility reward:</strong> For all tasks, EgoAVFlow achieves higher average visibility rewards $R_{vis}$ than Naive AV, demonstrating our method's visibility maintenance capability.
               </p>
             </div>
           </div>
-        </div>
-
-        <div class="content has-text-justified" style="margin-top: 1.5rem;">
-          <p>
-            <strong>Q2 explanation:</strong> [Add your explanation comparing Ours vs. Naive AV and the role of visibility reward and success rate here.]
-          </p>
         </div>
       </div>
     </div>
