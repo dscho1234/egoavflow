@@ -291,7 +291,96 @@
           </div>
         </div>
 
-        <!-- Visibility Comparison Image -->
+      </div>
+    </div>
+    <!--/ Method. -->
+  </div>
+</section>
+
+
+<!-- Dataset -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Dataset</h2>
+
+        <div class="columns">
+          <!-- Good visibility -->
+          <div class="column is-half">
+            <h3 class="title is-4">Good visibility</h3>
+            <div class="columns">
+              <div class="column is-half">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/spray_good.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-half">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/doll_good.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column is-half">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/towel_good.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-half">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/toilet_paper_good.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+          <!-- Bad visibility -->
+          <div class="column is-half">
+            <h3 class="title is-4">Bad visibility</h3>
+            <div class="columns">
+              <div class="column is-half">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/spray_bad.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-half">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/doll_bad.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column is-half">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/towel_bad.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-half">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/toilet_paper_bad.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content has-text-justified" style="margin-top: 1.5rem;">
+          <p>
+            <strong>Dataset description:</strong> [Add your explanation of the good vs. bad visibility dataset here. For example: the left column shows human egocentric videos where the object of interest remains well visible throughout the manipulation; the right column shows sequences with occlusions or poor viewpoints that lead to visibility failure.]
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Q1: Is the viewpoint adjustment necessary? -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Q1: Is the viewpoint adjustment necessary?</h2>
         <div class="columns is-centered">
           <div class="column is-four-fifths">
             <div class="content">
@@ -306,7 +395,102 @@
         </div>
       </div>
     </div>
-    <!--/ Method. -->
+  </div>
+</section>
+
+
+<!-- Q2: Is imitating a human's viewpoints the proper way? -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Q2: Is imitating a human's viewpoints the proper way?</h2>
+
+        <div class="columns">
+          <!-- Ours -->
+          <div class="column is-half">
+            <h3 class="title is-4">Ours</h3>
+            <div class="columns">
+              <div class="column is-half">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/spray_good_robot.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-half">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/doll_good_robot.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column is-half">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/towel_good_robot.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-half">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/toilet_paper_good_robot.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+          <!-- Naive AV -->
+          <div class="column is-half">
+            <h3 class="title is-4">Naive AV</h3>
+            <div class="columns">
+              <div class="column is-half">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/spray_bad_robot.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-half">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/doll_bad_robot.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column is-half">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/towel_bad_robot.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-half">
+                <video autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/toilet_paper_bad_robot.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered" style="margin-top: 1.5rem;">
+          <div class="column is-half">
+            <div class="content">
+              <img src="./static/images/success_rate_av.png" alt="Success rate AV" style="width: 100%;"/>
+              <p class="has-text-justified">
+                <strong>Success rate (AV):</strong> [Add your explanation of success_rate_av.png here.]
+              </p>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="content">
+              <img src="./static/images/visibility_reward.png" alt="Visibility reward" style="width: 100%;"/>
+              <p class="has-text-justified">
+                <strong>Visibility reward:</strong> [Add your explanation of visibility_reward.png here.]
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="content has-text-justified" style="margin-top: 1.5rem;">
+          <p>
+            <strong>Q2 explanation:</strong> [Add your explanation comparing Ours vs. Naive AV and the role of visibility reward and success rate here.]
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
