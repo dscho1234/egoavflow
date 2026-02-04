@@ -295,7 +295,7 @@
                    alt="Method overview diagram"
                    style="width: 100%;"/>
               <p class="has-text-justified">
-                <strong>Method Overview:</strong> EgoAVFlow consists of three diffusion models. The robot policy $\pi_r$ produces future robot action sequences. The flow generation model $f$ predicts future 3D flows given the $\pi_r$'s outputs. The view policy $\pi_v$ produces future camera viewpoints given the $\pi_r$, $f$'s outputs, and reconstructed mesh surfaces through a visibility-aware reward-maximizing denoising process. <span style="color: violet;">Viewpoints (A)</span> represents that most query points are invisible (<span style="color: red;">Red LOS</span>) due to the table's mesh surface or out of FoV, while these points are visible (<span style="color: green;">Green LOS</span>) in <span style="color: cyan;">viewpoints (B)</span>.
+                <strong>Method Overview:</strong> EgoAVFlow consists of three diffusion models. The robot policy $\pi_r$ produces future robot action sequences. The flow generation model $f$ predicts future 3D flows given the $\pi_r$'s outputs. The view policy $\pi_v$ produces future camera viewpoints given the $\pi_r$, $f$'s outputs, and reconstructed mesh surfaces through a visibility-aware reward-maximizing denoising process. <span style="color: violet; font-weight: bold;">Viewpoints (A)</span> represents that most query points are invisible (<span style="color: red; font-weight: bold;">Red LOS</span>) due to the table's mesh surface or out of FoV, while these points are visible (<span style="color: green; font-weight: bold;">Green LOS</span>) in <span style="color: cyan; font-weight: bold;">viewpoints (B)</span>.
               </p>
             </div>
           </div>
@@ -513,18 +513,20 @@
         <h2 class="title is-3">Q3: Is the proposed 3D flow-based policy robust under actively varying viewpoints?</h2>
 
         <div class="columns">
-          <!-- Left: 2x2 videos -->
+          <!-- Left: 2x2 videos with method labels -->
           <div class="column is-half">
             <div class="columns">
               <div class="column is-half">
                 <video autoplay controls muted loop playsinline width="100%">
                   <source src="./static/videos/spray_good_robot_trim.mp4" type="video/mp4">
                 </video>
+                <p class="has-text-centered" style="margin-top: 0.35rem; font-size: 0.95rem;"><strong>EgoAVFlow (Ours)</strong></p>
               </div>
               <div class="column is-half">
                 <video autoplay controls muted loop playsinline width="100%">
                   <source src="./static/videos/amplify_failure_trim.mp4" type="video/mp4">
                 </video>
+                <p class="has-text-centered" style="margin-top: 0.35rem; font-size: 0.95rem;"><strong>AMPLIFY</strong></p>
               </div>
             </div>
             <div class="columns">
@@ -532,11 +534,13 @@
                 <video autoplay controls muted loop playsinline width="100%">
                   <source src="./static/videos/egozero_failure_trim.mp4" type="video/mp4">
                 </video>
+                <p class="has-text-centered" style="margin-top: 0.35rem; font-size: 0.95rem;"><strong>EgoZero</strong></p>
               </div>
               <div class="column is-half">
                 <video autoplay controls muted loop playsinline width="100%">
                   <source src="./static/videos/phantom_failure_trim.mp4" type="video/mp4">
                 </video>
+                <p class="has-text-centered" style="margin-top: 0.35rem; font-size: 0.95rem;"><strong>Phantom</strong></p>
               </div>
             </div>
           </div>
@@ -544,6 +548,9 @@
           <div class="column is-half">
             <div class="content">
               <img src="./static/images/success_rate_robot_policy_baseline.png" alt="Success rate robot policy baseline" style="width: 100%;"/>
+              <p class="has-text-justified" style="margin-top: 1rem;">
+                <strong>Success rate (robot policy baselines):</strong> Success rates of EgoAVFlow and robot policy learning baselines
+              </p>
             </div>
           </div>
         </div>
