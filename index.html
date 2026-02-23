@@ -255,7 +255,7 @@
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
           <video id="paper-video" autoplay controls muted loop playsinline width="100%">
-            <source src="./static/videos/videos-v3-wo-appendix-compressed.mp4"
+            <source src="./static/videos/videos-v4.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -277,11 +277,11 @@
         <div class="columns is-centered">
           <div class="column is-four-fifths">
             <div class="content">
-              <img src="./static/images/thumbnail-v3.png"
+              <img src="./static/images/thumbnail-v11.pdf"
                    alt="Thumbnail image"
                    style="width: 100%;"/>
               <p class="has-text-justified">
-                Given egocentric human videos with varying visibility, EgoAVFlow converts the demonstrations into a 3D flow representation. Building on this representation, it jointly learns a robot manipulation policy and a view policy that adjusts the camera viewpoint independently of the human demo to maximize the visibility of the object of interest.
+                EgoAVFlow learns manipulation and active viewpoint control from egocentric human videos by predicting future 3D flow and optimizing camera viewpoints for visibility, yielding viewpoint-robust robot execution without robot demonstrations.
               </p>
             </div>
           </div>
@@ -291,11 +291,11 @@
         <div class="columns is-centered">
           <div class="column is-four-fifths">
             <div class="content">
-              <img src="./static/images/method-v3.png"
+              <img src="./static/images/method-v5.pdf"
                    alt="Method overview diagram"
                    style="width: 100%;"/>
               <p class="has-text-justified">
-                <strong>Method Overview:</strong> EgoAVFlow consists of three diffusion models. The robot policy $\pi_r$ produces future robot action sequences. The flow generation model $f$ predicts future 3D flows given the $\pi_r$'s outputs. The view policy $\pi_v$ produces future camera viewpoints given the $\pi_r$, $f$'s outputs, and reconstructed mesh surfaces through a visibility-aware reward-maximizing denoising process. <span style="color: #7c3aed; font-weight: bold;">Viewpoints (A)</span> represents that most query points are invisible (<span style="color: red; font-weight: bold;">Red LOS</span>) due to the table's mesh surface or out of FoV, while these points are visible (<span style="color: #22c55e; font-weight: bold;">Green LOS</span>) in <span style="color: cyan; font-weight: bold;">viewpoints (B)</span>.
+                <strong>Method overview.</strong> EgoAVFlow consists of three diffusion models. The robot policy $\pi_r$ produces future robot action sequences. The flow generation model $f$ predicts future 3D flows from the outputs of $\pi_r$. The view policy $\pi_v$ produces future camera viewpoints from the outputs of $\pi_r$, $f$, and reconstructed mesh surfaces through a visibility-aware reward-maximizing denoising process. <span style="color: #445A33; font-weight: bold;">Viewpoints (A)</span> represent that most query points are invisible (<span style="color: #E82A27; font-weight: bold;">Red LOS</span>) due to the table's mesh surface or out of FoV, whereas in <span style="color: #FBD35A; font-weight: bold;">viewpoints (B)</span> these points are visible (<span style="color: #92D050; font-weight: bold;">Green LOS</span>), yielding a higher visibility reward.
               </p>
             </div>
           </div>
@@ -394,7 +394,7 @@
         <div class="columns is-centered">
           <div class="column is-four-fifths">
             <div class="content">
-              <img src="./static/images/visibility_comparison-v2.png"
+              <img src="./static/images/visibility_comparison-v3.pdf"
                    alt="Visibility comparison"
                    style="width: 100%;"/>
               <p class="has-text-justified">
@@ -482,19 +482,11 @@
         </div>
 
         <div class="columns is-centered" style="margin-top: 1.5rem;">
-          <div class="column is-half">
+          <div class="column">
             <div class="content">
-              <img src="./static/images/success_rate_av.png" alt="Success rate AV" style="width: 100%;"/>
+              <img src="./static/images/svdd-visibility-rewards_bar_combined.pdf" alt="Visibility reward" style="width: 100%;"/>
               <p class="has-text-justified">
-                <strong>Success rate (AV):</strong> Success rates of EgoAVFlow and Naive AV. 
-              </p>
-            </div>
-          </div>
-          <div class="column is-half">
-            <div class="content">
-              <img src="./static/images/visibility_reward.png" alt="Visibility reward" style="width: 100%;"/>
-              <p class="has-text-justified">
-                <strong>Visibility reward:</strong> For all tasks, EgoAVFlow achieves higher average visibility rewards $R_{vis}$ than Naive AV, demonstrating our method's visibility maintenance capability.
+                <strong>Visibility reward:</strong> For all tasks, EgoAVFlow achieves higher average visibility rewards $R_{vis}$ than HVI, demonstrating our method's visibility maintenance capability.
               </p>
             </div>
           </div>
@@ -547,9 +539,9 @@
           <!-- Right: success rate figure -->
           <div class="column is-half">
             <div class="content">
-              <img src="./static/images/success_rate_robot_policy_baseline.png" alt="Success rate robot policy baseline" style="width: 100%;"/>
+              <img src="./static/images/success_rates.png" alt="Success rates robot policy baseline" style="width: 100%;"/>
               <p class="has-text-justified" style="margin-top: 1rem;">
-                <strong>Success rate (robot policy baselines):</strong> Success rates of EgoAVFlow and robot policy learning baselines
+                <strong>Success rates of EgoAVFlow, HVI (Human Viewpoint Imitation), and robot policy learning baselines:</strong>
               </p>
             </div>
           </div>
@@ -557,7 +549,7 @@
 
         <div class="content has-text-justified" style="margin-top: 1.5rem;">
           <p>
-            All baselines are trained on the same dataset as our method, and no real robot data is used. As AMPLIFY and Phantom require an image input, we use diffusion-based inpainting to remove the human in the image and overlays a robot onto the resulting frames, enabling policy training on synthesized robot observations. To isolate the effect of the policy representation, we use the same viewpoint adjustment module for all methods: our view policy $\pi_v$ with visibility-maximizing denoising. As shown in the experimental results, EgoAVFlow shows superior capability compared to baselines. As the viewpoint keeps changing during the evaluation by our proposed view policy, the results demonstrate that the proposed 3D flow-based policy is view-invariant and benefits from its inherent 3D representation.
+            All baselines are trained on the same dataset as our method, and no real robot data is used. As AMPLIFY and Phantom require an image input, we use diffusion-based inpainting to remove the human in the image and overlays a robot onto the resulting frames, enabling policy training on synthesized robot observations. To isolate the effect of the policy representation, we use the same viewpoint adjustment module for all methods: our view policy $\pi_v$ with visibility-maximizing denoising. As shown in the experimental results, EgoAVFlow shows superior capability compared to baselines. As the viewpoint keeps changing during the evaluation by our proposed view policy, the results demonstrate that the proposed 3D flow-based policy is view-invariant and benefits from its inherent 3D representation, yielding a viewpoint-robust manipulation capability.
           </p>
         </div>
       </div>
@@ -575,9 +567,9 @@
         <div class="columns is-centered">
           <div class="column is-four-fifths">
             <div class="content">
-              <img src="./static/images/failure_analysis_pi_chart_only.png" alt="Failure analysis" style="width: 100%;"/>
+              <img src="./static/images/failure_analysis-v3.pdf" alt="Failure analysis" style="width: 100%;"/>
               <p class="has-text-justified" style="margin-top: 1rem;">
-                <strong>Failure analysis:</strong> Since AMPLIFY and Phantom are not inherently 3D-aware, they suffer from distribution shifts when evaluated under the unseen viewpoints. EgoZero uses 3D points, but it cannot address the non-static scene, such as when the object moves due to the gripper's contact. As a result, these robot policy baselines account for most manipulation-related failures, such as grasping/object pose failure. In the case of out-of-viewpoint, Naive AV accounts for most failures because it does not use our proposed view policy for visibility maintenance. EgoAVFlow accounts for the second-largest share of the failures. However, this does not indicate worse performance; rather, many robot policy baseline rollouts are already counted as early grasping failures and thus do not reach the later stages. If they progressed further, their proportions would be more comparable to our method.
+                <strong>Failure analysis:</strong> Since AMPLIFY and Phantom are not inherently 3D-aware, they suffer from distribution shifts when evaluated under the unseen viewpoints. EgoZero uses 3D points, but it cannot address the non-static scene, such as when the object moves due to the gripper's contact. As a result, these robot policy baselines account for most manipulation-related failures, such as grasping/object pose failure. In the case of out-of-viewpoint, HVI accounts for most failures because it does not use our proposed view policy for visibility maintenance. EgoAVFlow accounts for the second-largest share of the failures. However, this does not indicate worse performance; rather, many robot policy baseline rollouts are already counted as early grasping failures and thus do not reach the later stages. If they progressed further, their proportions would be more comparable to our method.
               </p>
             </div>
           </div>
