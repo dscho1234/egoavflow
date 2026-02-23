@@ -273,9 +273,7 @@
         <div class="columns is-centered">
           <div class="column is-four-fifths">
             <div class="content">
-              <object data="./static/images/thumbnail-v11.pdf" type="application/pdf" style="width: 100%; min-height: 420px;" title="Thumbnail image">
-                <p><a href="./static/images/thumbnail-v11.pdf">Thumbnail image (PDF)</a></p>
-              </object>
+              <img src="./static/images/thumbnail-v11.png" alt="Thumbnail image" style="width: 100%;"/>
               <p class="has-text-justified">
                 EgoAVFlow learns manipulation and active viewpoint control from egocentric human videos by predicting future 3D flow and optimizing camera viewpoints for visibility, yielding viewpoint-robust robot execution without robot demonstrations.
               </p>
@@ -287,9 +285,7 @@
         <div class="columns is-centered">
           <div class="column is-four-fifths">
             <div class="content">
-              <object data="./static/images/method-v5.pdf" type="application/pdf" style="width: 100%; min-height: 480px;" title="Method overview diagram">
-                <p><a href="./static/images/method-v5.pdf">Method overview (PDF)</a></p>
-              </object>
+              <img src="./static/images/method-v5.png" alt="Method overview diagram" style="width: 100%;"/>
               <p class="has-text-justified">
                 <strong>Method overview.</strong> EgoAVFlow consists of three diffusion models. The robot policy $\pi_r$ produces future robot action sequences. The flow generation model $f$ predicts future 3D flows from the outputs of $\pi_r$. The view policy $\pi_v$ produces future camera viewpoints from the outputs of $\pi_r$, $f$, and reconstructed mesh surfaces through a visibility-aware reward-maximizing denoising process. <span style="color: #445A33; font-weight: bold;">Viewpoints (A)</span> represent that most query points are invisible (<span style="color: #E82A27; font-weight: bold;">Red LOS</span>) due to the table's mesh surface or out of FoV, whereas in <span style="color: #FBD35A; font-weight: bold;">viewpoints (B)</span> these points are visible (<span style="color: #92D050; font-weight: bold;">Green LOS</span>), yielding a higher visibility reward.
               </p>
@@ -390,9 +386,7 @@
         <div class="columns is-centered">
           <div class="column is-four-fifths">
             <div class="content">
-              <object data="./static/images/visibility_comparison-v3.pdf" type="application/pdf" style="width: 100%; min-height: 420px;" title="Visibility comparison">
-                <p><a href="./static/images/visibility_comparison-v3.pdf">Visibility comparison (PDF)</a></p>
-              </object>
+              <img src="./static/images/visibility_comparison-v3.png" alt="Visibility comparison" style="width: 100%;"/>
               <p class="has-text-justified">
                 The visibility is computed from each different fixed viewpoint. No single viewpoint can maintain full visibility throughout the execution, indicating that the viewpoint must be continuously adjusted online to maximize visibility.
               </p>
@@ -480,9 +474,7 @@
         <div class="columns is-centered" style="margin-top: 1.5rem;">
           <div class="column">
             <div class="content">
-              <object data="./static/images/svdd-visibility-rewards_bar_combined.pdf" type="application/pdf" style="width: 100%; min-height: 360px;" title="Visibility reward">
-                <p><a href="./static/images/svdd-visibility-rewards_bar_combined.pdf">Visibility reward (PDF)</a></p>
-              </object>
+              <img src="./static/images/svdd-visibility-rewards_bar_combined.png" alt="Visibility reward" style="width: 100%;"/>
               <p class="has-text-justified">
                 <strong>Visibility reward:</strong> For all tasks, EgoAVFlow achieves higher average visibility rewards $R_{vis}$ than HVI, demonstrating our method's visibility maintenance capability.
               </p>
@@ -565,9 +557,7 @@
         <div class="columns is-centered">
           <div class="column is-four-fifths">
             <div class="content">
-              <object data="./static/images/failure_analysis-v3.pdf" type="application/pdf" style="width: 100%; min-height: 420px;" title="Failure analysis">
-                <p><a href="./static/images/failure_analysis-v3.pdf">Failure analysis (PDF)</a></p>
-              </object>
+              <img src="./static/images/failure_analysis-v3.png" alt="Failure analysis" style="width: 100%;"/>
               <p class="has-text-justified" style="margin-top: 1rem;">
                 <strong>Failure analysis:</strong> Since AMPLIFY and Phantom are not inherently 3D-aware, they suffer from distribution shifts when evaluated under the unseen viewpoints. EgoZero uses 3D points, but it cannot address the non-static scene, such as when the object moves due to the gripper's contact. As a result, these robot policy baselines account for most manipulation-related failures, such as grasping/object pose failure. In the case of out-of-viewpoint, HVI accounts for most failures because it does not use our proposed view policy for visibility maintenance. EgoAVFlow accounts for the second-largest share of the failures. However, this does not indicate worse performance; rather, many robot policy baseline rollouts are already counted as early grasping failures and thus do not reach the later stages. If they progressed further, their proportions would be more comparable to our method.
               </p>
