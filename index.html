@@ -436,7 +436,7 @@
 
         <div class="content has-text-justified" style="margin-top: 1.5rem;">
           <p>
-            Due to the visibility-maximizing viewpoint adjustments, EgoAVFlow maintains visibility of the query points and their predicted future flows, whereas HVI fails to keep them in view, causing the query points to move out of the FoV.
+            Due to the visibility-maximizing viewpoint adjustments, EgoAVFlow maintains visibility of the query points and their predicted future flows, whereas human viewpoint imitation (HVI) fails to keep them in view, causing the query points to move out of the FoV.
           </p>
         </div>
 
@@ -445,7 +445,7 @@
             <div class="content">
               <img src="./static/images/svdd-visibility-rewards_bar_combined.png" alt="Visibility reward" style="width: 100%;"/>
               <p class="has-text-justified">
-                <strong>Visibility reward:</strong> For all tasks, EgoAVFlow achieves higher average visibility rewards $R_{vis}$ than HVI, demonstrating our method's visibility maintenance capability.
+                <strong>Visibility reward:</strong> For all tasks, EgoAVFlow achieves higher average visibility rewards $R_{vis}$ than human viewpoint imitation (HVI), demonstrating our method's visibility maintenance capability.
               </p>
             </div>
           </div>
@@ -506,7 +506,7 @@
             <div class="content">
               <img src="./static/images/failure_analysis-v3.png" alt="Failure analysis" style="width: 100%;"/>
               <p class="has-text-justified" style="margin-top: 1rem;">
-                <strong>Failure analysis:</strong> Since AMPLIFY and Phantom are not inherently 3D-aware, they suffer from distribution shifts when evaluated under the unseen viewpoints. EgoZero uses 3D points, but it cannot address the non-static scene, such as when the object moves due to the gripper's contact. As a result, these robot policy baselines account for most manipulation-related failures, such as grasping/object pose failure. In the case of out-of-viewpoint, HVI accounts for most failures because it does not use our proposed view policy for visibility maintenance. EgoAVFlow accounts for the second-largest share of the failures. However, this does not indicate worse performance; rather, many robot policy baseline rollouts are already counted as early grasping failures and thus do not reach the later stages. If they progressed further, their proportions would be more comparable to our method.
+                <strong>Failure analysis:</strong> Since AMPLIFY and Phantom are not inherently 3D-aware, they suffer from distribution shifts when evaluated under the unseen viewpoints. EgoZero uses 3D points, but it cannot address the non-static scene, such as when the object moves due to the gripper's contact. As a result, these robot policy baselines account for most manipulation-related failures, such as grasping/object pose failure. In the case of out-of-viewpoint, human viewpoint imitation (HVI) accounts for most failures because it does not use our proposed view policy for visibility maintenance. EgoAVFlow accounts for the second-largest share of the failures. However, this does not indicate worse performance; rather, many robot policy baseline rollouts are already counted as early grasping failures and thus do not reach the later stages. If they progressed further, their proportions would be more comparable to our method.
               </p>
             </div>
           </div>
